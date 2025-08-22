@@ -1,0 +1,4 @@
+{
+  "buildCommand": "pnpm --workspace-root exec turbo --no-daemon --filter brag-doc-admin build --env-mode loose",
+  "installCommand": "node -v && pnpm --workspace-root --filter brag-doc-admin... install --config.dedupe-peer-dependents=false"
+}

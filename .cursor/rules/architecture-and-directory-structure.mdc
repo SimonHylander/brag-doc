@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# =========================
+# GENERAL MONOREPO RULES
+# =========================
+- Rule: All business logic must live inside `features/*/domain` or `features/*/use-cases`.
+- Rule: UI code for web goes in `features/*/ui/web`, UI for mobile goes in `features/*/ui/mobile`.
+- Rule: Apps in `apps/*` should only consume features, never reimplement business logic.
+- Rule: Shared types/interfaces go inside each feature’s `domain` folder.
+- Rule: Never import directly from another feature’s `ui`. Communication between features happens only through exported domain/use-case functions.
+
+# =========================
+# FEATURE RULES
+# =========================
+- Rule: Each feature must have the following structure:
+    - domain/    # Entities, types, validation schemas, repository interfaces
+    - use-cases/ # Application logic (pure functions, no framework-specific code)
+    - ui/        # UI components (web + mobile separated)
+    - tests/     # Unit tests for domain + use-cases
+- Rule: Do not mix persistence (DB/API) logic directly in use-cases. Instead, inject repository interfaces defined in domain/.
+- Rule: Use Zod for runtime validation of inputs/outputs inside domain/.
