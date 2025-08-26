@@ -1,22 +1,22 @@
 {
   "$schema": "https://openapi.vercel.sh/microfrontends.json",
   "applications": {
+    "brag-doc-admin": {
+      "development": {
+        "local": 3001
+      }
+    },
     "brag-doc-showcase": {
       "development": {
         "local": 3000,
         "fallback": "brag-doc-admin.labs.vercel.dev"
       }
     },
-    "brag-doc-admin": {
-      "development": {
-        "local": 3001
-      },
-      "routing": [
-        {
-          "group": "admin",
-          "paths": ["/admin", "/admin/:path*"]
-        }
-      ]
-    }
+    "routing": [
+      {
+        "group": "admin",
+        "paths": ["/showcase", "/showcase/:path*"]
+      }
+    ]
   }
 }
