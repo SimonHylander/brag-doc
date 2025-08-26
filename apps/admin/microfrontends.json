@@ -10,13 +10,13 @@
       "development": {
         "local": 3000,
         "fallback": "brag-doc-admin.labs.vercel.dev"
-      }
-    },
-    "routing": [
-      {
-        "group": "admin",
-        "paths": ["/showcase", "/showcase/:path*"]
-      }
-    ]
+      },
+      "routing": [
+        {
+          "group": "admin",
+          "paths": ["/showcase", "/showcase/:path*"]
+        }
+      ]
+    }
   }
 }
